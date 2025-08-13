@@ -8,6 +8,8 @@ console.log(null == 0); // false
 
 // Equality and comparision behaves differently for null and undefined
 // Equality just check for the equality.
-// Comparision converts null and undefined to numbers before comparing and then compares them.
+// Comparision converts null to numbers before comparing and then compares them; it converts undefined to NaN which on any comparision or equality check gives false. 
+
+
 
 
