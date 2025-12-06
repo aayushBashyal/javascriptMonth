@@ -41,10 +41,7 @@ function symbol(turn) {
     }
 }
 
-resetBtn.addEventListener("click", () => {
-    boxes.forEach((box) => reset(box))
-    declareTxt.innerText = ``;
-})
+resetBtn.addEventListener("click", trueReset)
 
 function reset(box) {
     turnO = true;
@@ -69,7 +66,6 @@ function checkWin() {
     }
     if (patternO.length >= 3) {
         if (checkPattern(patternO)) {
-            console.log("O won the game");
             return "O";
         };
     }
@@ -103,8 +99,8 @@ function checkPattern(pattern) {
 }
 
 function checkDeclare(winner){
-    if (checkWin()) {
-        declare();
+    if (winner) {
+        // declare();
 
         (() => {
             boxes.forEach((box) => {
@@ -116,6 +112,14 @@ function checkDeclare(winner){
     }
 }
 
-function declare(){
+// function declare(){
 
+// }
+
+function trueReset() {
+    boxes.forEach((box) => reset(box))
+    declareTxt.innerText = ``;
+    patternO = [];
+    patternX = [];
+    turnO = true;
 }
